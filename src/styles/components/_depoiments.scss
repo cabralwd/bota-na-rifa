@@ -1,0 +1,101 @@
+.depoiments {
+  position: relative;
+  margin: 60px 0px 0px;
+  padding: 30px 0px;
+  width: 100%;
+  height: auto;
+  background-color: rgba($sec, 0.9);
+  background-image: url('../images/banner-depoiments.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: local;
+  background-attachment: fixed;
+  font-size: 80%;
+
+  @include tamanho-tela(tablet) {
+    font-size: 100%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba($sec, 0.9);
+  }
+
+  .title-sections {
+    color: $light;
+    text-decoration: underline;
+    font-weight: 400;
+  }
+
+  .carousel {
+    width: 100%;
+    display: block;
+
+    .people {
+      background: linear-gradient(to bottom, transparent 0%, transparent 70px, $light 70px, $light 100%);
+      width: 100%;
+      font-size: 130%;
+      color: $dark;
+      padding: 0px 30px 20px;
+
+      @include tamanho-tela(celular) {
+        font-size: 100%;
+      }
+
+      &::before {
+        content: '';
+        background: url('../../images/background-share.svg') no-repeat;
+        width: 100%;
+        height: 100%;
+        background-position: 80% 75%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+
+      .photo {
+        position: relative;
+        display: block;
+        width: 136px;
+        border-radius: 50%;
+        margin: 0 auto;
+
+        img {
+          border-radius: inherit;
+          width: inherit;
+        }
+      }
+
+      h3 {
+        font-size: 1.25em;
+        color: $pri;
+        margin: 10px 0px;
+        text-align: center;
+      }
+
+      .cite {
+        font-weight: 500;
+        font-style: italic;
+
+        span {
+          font-size: 1.1em;
+          font-weight: 700;
+        }
+      }
+
+      .who-quoted {
+        font-weight: 700;
+        font-style: italic;
+        text-align: right;
+        margin-top: 40px;
+      }
+    }
+  }
+}

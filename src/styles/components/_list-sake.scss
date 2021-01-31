@@ -1,0 +1,163 @@
+.list-sake {
+  font-size: 80%;
+  margin-top: 60px;
+
+  @include tamanho-tela(tablet) {
+    font-size: 100%;
+  }
+
+  .list-itens {
+    display: grid;
+    grid-template-columns: 100%;
+
+    @include tamanho-tela(celular) {
+      grid-gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tamanho-tela(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include tamanho-tela(desktop-up) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .item {
+      width: 100%;
+      font-size: 170%;
+      border: 3px solid $sec;
+      margin: 0px 0px 30px;
+      color: $dark;
+
+      &:last-child {
+        margin: 0px;
+      }
+
+      &:hover {
+        border-color: $dark2;
+        filter: drop-shadow(4px 4px 4px rgba(45, 58, 58, 0.3));
+      }
+
+      @include tamanho-tela(celular) {
+        font-size: 140%;
+        margin: 0px;
+      }
+
+      @include tamanho-tela(tablet) {
+        font-size: 160%;
+      }
+
+      @include tamanho-tela(desktop) {
+        font-size: 150%;
+      }
+
+      @include tamanho-tela(desktop-up) {
+        font-size: 100%;
+      }
+
+      .image {
+        img {
+          width: 100%;
+          object-fit: fill;
+        }
+      }
+
+      .content {
+        padding: 15px;
+
+        h3 {
+          color: $dark2;
+          font-size: 1em;
+          font-weight: 700;
+          margin: 0px 0px 0px 0px;
+        }
+
+        small {
+          color: $dark2;
+          font-size: .75em;
+          padding: 0;
+          margin: 0;
+        }
+
+        .money {
+          margin: 10px 0px 0px;
+
+          p {
+            font-weight: 700;
+
+            span {
+              color: $pri;
+            }
+          }
+        }
+
+        .divisor {
+          width: 40px;
+          border-top: 1px solid $dark;
+          display: block;
+          margin: 20px auto 15px;
+        }
+
+        .profile {
+          display: flex;
+          color: $dark2;
+
+          .photo {
+            width: 47px;
+            margin-right: 10px;
+            border-radius: 50%;
+
+            img {
+              width: inherit;
+              border-radius: inherit;
+            }
+          }
+
+          .infos {
+            h4 {
+              margin: 0;
+              padding: 0;
+            }
+
+            small {
+              font-size: .7em;
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .view-more {
+    font-size: 100%;
+    cursor: pointer;
+    text-align: center;
+    padding: 20px 0px 0px;
+
+    p {
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 1.225em;
+
+      &:hover {
+        color: $sec;
+      }
+    }
+
+    .arrow-bottom {
+      display: block;
+      margin: 0 auto;
+      width: 44px;
+      height: auto;
+      margin-top: 5px;
+
+      img {
+        width: inherit;
+        height: inherit;
+      }
+    }
+  }
+}
