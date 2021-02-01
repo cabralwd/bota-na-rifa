@@ -1,0 +1,23 @@
+.rifas {
+  margin-top: 60px;
+
+  .estrutura {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .item {
+    .titulo {
+      background-color: $alert;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1rem;
+      text-align: center;
+      padding: 12px 0;
+      line-height: 25px;
+      color: $dark;
+      margin-bottom: 10px;
+    }
+  }
+}

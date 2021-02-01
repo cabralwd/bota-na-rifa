@@ -19,15 +19,72 @@ html(lang="pt-br")
     //- Header
     header.header
       a(href="index.html").logo
-        img(src="./images/logo.png")
+        img(src="./images/logo.png" alt="Logo do Bota na Rifa")
 
     //- Banner
     .banner
       .container
-        .content
-          .titulo
-            h1 O melhor sistema #[br]de Rifas Online 
-          .felicidade
-            img(src="./images/mulher-vibrando.png")
+        .fundo
+          .content
+            .titulo
+              h1 O melhor sistema #[br]de Rifas Online 
+            .felicidade
+              img(src="./images/mulher-vibrando.png" alt="Mulher Feliz com o prêmio")
 
+    //- Rifas paste 1
+    .rifas
+      - var items = [{titulo: 'Colossus Estrela', valor: '20'}, {titulo: '2 Tequilas Mexicanas', valor: '5'}, {titulo: 'R$ 1.500,00 na sua conta', valor: '20'}];
+      .container
+        .estrutura
+          each item, i in items
+            .item
+              img.image(src="./images/api/api-rifas-"+i+".jpg" alt="Rifa "+i)
+              h3.titulo #{item.titulo}
+              a.button(href="#") Participar com R$ 
+                span #{item.valor}
+
+    //- Chamada criar Rifa
+    .create-rifa
+      .container
+        .chamada
+          .titulo
+            h2 Não perca mais tempo, crie Já seu site de Rifa! 
+            .button Criar meu site de Rifa 
+          .mascote
+            img.image(src="./images/mascote.svg" alt="Macote Bota na Rifa")
+
+    //- Rifas paste 2
+    .rifas
+      - var items = [{titulo: 'POP 110i 2021 ou R$ 7.000,00', valor: '10'}, {titulo: '01 barca de sushi para duas pessoas', valor: '20'}, {titulo: '35 cotas da rifa do Jetta TSI', valor: '5'}, {titulo: 'iPhone 12 lacrado ou 5 mil reais', valor: '120'}, {titulo: 'Moto Yamaha Xt660', valor: '100'}, {titulo: 'R$ 300,00 reais na conta', valor: '1'}];
+      .container
+        .estrutura
+          - let iterator = 3;
+          each item in items
+            .item
+              img.image(src="./images/api/api-rifas-"+iterator+".jpg" alt="Rifa "+iterator)
+              h3.titulo #{item.titulo}
+              a.button(href="#") Participar com R$ 
+                span #{item.valor}
+                - iterator++;
+
+    footer.footer
+      .container
+        h2.titulo Perguntas Frequentes
+        - let lista = [{titulo: 'Como participo?', descricao: 'No campo acima, clique no botão verde participar, em seguida, serão exibidos todos os números disponíveis. Escolha o(s) número(s) de sua preferência, faça o pagamento para uma das opções disponibilizadas, envie o comprovante de pagamento para o whatsapp disponibilizado no campo "Enviar Comprovante", aguarde a confirmação de pagamento e pronto! Agora só aguardar até o dia do sorteio.'}];
+        ul.lista-perguntas
+          each item in lista
+            li
+              h3 #{item.titulo}
+              p #{item.descricao}
+
+    .direitos
+      .container
+        .logo
+          img(src="./images/logo.png" alt="Logo Bota na Rifa")
+        .copy
+          p Desenvolvido por Bota na Rifa - Termos e Condições - ©
+            span(data-year)
+
+    script(type="text/javascript").
+      document.querySelector('[data-year]').innerText = new Date().getFullYear()
     script(src="./scripts/bundle.js")

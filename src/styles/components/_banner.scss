@@ -1,319 +1,40 @@
 .banner {
   padding-top: 140px;
 
+  .fundo {
+    background: conic-gradient(from 45.18deg at 76.8% 50%, #2BA84A 0deg, #DFB018 360deg);
+  }
+
   .content {
     position: relative;
-    display: block;
-    width: 100%;
-    height: 330px;
-    background: url('../images/banner-principal.jpg') no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .titles {
-    width: 560px;
-    height: inherit;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: center;
-    animation: animaFadeInfos 2s;
-    z-index: 2;
-    font-size: 80%;
-    text-align: center;
-
-    @include tamanho-tela(celular) {
-      font-size: 100%;
-      text-align: left;
-    }
-
-    h1 {
-      font-weight: 700;
-      color: $light;
-      font-size: 3.125em;
-      padding: 0;
-      margin: 0;
-    }
-
-    p {
-      display: block;
-      width: 100%;
-      color: $sec;
-      font-size: 2em;
-      margin-top: 0.3125em;
-    }
-  }
-
-  .create-action {
+    padding: 0px 50px;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 1rem;
-
-    .money {
-      font-size: 1rem;
-      position: relative;
-      border: none;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-
-      @include tamanho-tela(celular) {
-        width: 125px;
-      }
-
-      label {
-        position: absolute;
-        top: 17px;
-        left: 15px;
-        color: rgba($light, 0.5);
-        font-weight: 700;
-        font-size: 20px;
-      }
-    }
-
-    input {
-      display: block;
-      color: $light;
-      border-radius: 15px;
-      font-size: 1.25rem;
-      font-style: normal;
-      font-family: $font-default,
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif,
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol';
-      -webkit-font-smoothing: antialiased;
-
-      &::placeholder {
-        font-weight: 700;
-        color: rgba($light, .5);
-      }
-
-      &[type="email"],
-      &[type="number"] {
-        background-color: $dark2;
-        border: 1px dashed $light;
-        padding: 1rem;
-        outline-color: $sec;
-      }
-
-      &[type="number"] {
-        width: inherit;
-        position: relative;
-        padding-left: 45px !important;
-      }
-
-      &[type="email"] {
-        width: 100%;
-        margin-top: 15px;
-
-        @include tamanho-tela(celular) {
-          width: 240px;
-          margin: 0;
-        }
-      }
-
-      &[type="submit"] {
-        padding: 0 25px;
-        background-color: $sec;
-        border: none;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 1rem;
-        cursor: pointer;
-        outline: none;
-        min-height: 57px;
-        margin: 15px 0;
-        width: 100%;
-
-        @include tamanho-tela(celular) {
-          margin: 0;
-          width: auto;
-        }
-
-        &:hover {
-          box-sizing: border-box;
-          background-color: $dark2;
-          border: 2px solid $pri;
-          padding: 0 23px;
-        }
-      }
-    }
-  }
-
-  .images-banner {
-    background: url('../../images/background-banner.png') no-repeat;
-    font-size: 100%;
-    min-width: 540px;
-    height: 530px;
-    background-size: 100% 100%;
-    display: block;
-    position: absolute;
-    opacity: .08;
-
-    @media (min-width: 1130px) {
-      animation: animaFadeCircles 3s;
-      position: relative;
-      opacity: 1;
-    }
-
-    .image {
-      width: 100px;
-      position: absolute;
-      border-radius: 50%;
-      box-sizing: border-box;
-      border: 5px solid $light;
-
-      img {
-        width: 100%;
-        border-radius: inherit;
-      }
-
-      &:nth-child(1) {
-        animation: animaCirclesCenter1 .9s;
-        animation-delay: 1.5s;
-        animation-fill-mode: forwards;
-        z-index: 1;
-      }
-
-      &:nth-child(2) {
-        animation: animaCirclesCenter2 .9s;
-        animation-delay: 1.5s;
-        animation-fill-mode: forwards;
-      }
-
-      &:nth-child(3) {
-        animation: animaCirclesCenter3 .9s;
-        animation-delay: 1.5s;
-        animation-fill-mode: forwards;
-      }
-
-      &:nth-child(4) {
-        animation: animaCirclesCenter4 .9s;
-        animation-delay: 1.5s;
-        animation-fill-mode: forwards;
-      }
-
-      &:nth-child(5) {
-        animation: animaCirclesCenter5 .9s;
-        animation-delay: 1.5s;
-        animation-fill-mode: forwards;
-      }
-
-      &:nth-child(6) {
-        animation: animaCirclesCenter6 .9s;
-        animation-delay: 1.5s;
-        animation-fill-mode: forwards;
-      }
-
-      &:nth-child(7) {
-        animation: animaCirclesCenter7 .9s;
-        animation-delay: 1.5s;
-        animation-fill-mode: forwards;
-      }
-    }
-  }
-}
-
-.banner-mini {
-  margin: 60px 0px 0px;
-
-  .bm-content {
-    background: linear-gradient(264.5deg, $sec 60.48%, $pri 100%);
-    padding: 30px 20px;
-    display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-image: url('../images/banner-principal.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
 
-    @include tamanho-tela(desktop) {
-      justify-content: space-between;
-      padding: 10px 20px 0px 20px;
+  .titulo {
+    h1 {
+      font-family: $font-sec, sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      color: $light;
+      font-size: 5rem;
+      margin: 0;
     }
   }
 
-  .image-woman {
-    // width: calc(346px / 2);
-    display: block;
-    flex: 0 1 calc(300px);
-    align-self: flex-end;
-
-    @include tamanho-tela(tablet) {
-      flex: 0 1 calc(346px / 2);
-    }
+  .felicidade {
+    width: 260px;
 
     img {
-      // width: inherit;
-      display: block;
-    }
-  }
-
-  .description {
-    flex: 0 1 575px;
-    background: url('../images/money-mini-banner.svg') no-repeat;
-    background-position: center center;
-    background-size: contain;
-    font-size: 80%;
-    margin: 30px 0px 0px;
-
-    @include tamanho-tela(tablet) {}
-
-    @include tamanho-tela(desktop) {
-      margin: 0;
-      background-size: auto;
-      font-size: 100%;
-    }
-
-    h1 {
-      font-size: 3.125em;
-      color: $light;
-      text-align: center;
-    }
-  }
-
-  .call-to-action {
-    flex: 0 1 100%;
-    text-align: center;
-    margin: 30px 0px 0px;
-    font-size: 100%;
-    color: $light;
-
-    @include tamanho-tela(desktop) {
-      margin: 0;
-      flex: 0 1 165px;
-      text-align: initial;
-    }
-
-    p {
-      font-size: 1.25em;
-    }
-
-    button {
-      background: $dark2;
-      border-radius: 15px;
-      color: $light;
-      border: none;
-      outline: none;
-      padding: 20px 30px;
-      margin: 10px 0px 0px;
-      text-transform: uppercase;
-      font-weight: 700;
-      cursor: pointer;
-
-      &:hover {
-        color: $sec;
-        border: 2px solid $light;
-        padding: 18px 28px;
-      }
+      width: inherit;
     }
   }
 }
