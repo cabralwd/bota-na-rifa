@@ -49,7 +49,7 @@ html(lang="pt-br")
         .chamada
           .titulo
             h2 Não perca mais tempo, crie Já seu site de Rifa! 
-            .button Criar meu site de Rifa 
+            a(href="#").button Criar meu site de Rifa 
           .mascote
             img.image(src="./images/mascote.svg" alt="Macote Bota na Rifa")
 
@@ -74,8 +74,8 @@ html(lang="pt-br")
         ul.lista-perguntas
           each item in lista
             li
-              h3 #{item.titulo}
-              p #{item.descricao}
+              h3.tit #{item.titulo}
+              p.info #{item.descricao}
 
     .direitos
       .container

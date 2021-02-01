@@ -4,7 +4,8 @@
   .estrutura {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    column-gap: 30px;
+    row-gap: 60px;
   }
 
   .item {

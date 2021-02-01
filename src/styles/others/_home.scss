@@ -1,0 +1,33 @@
+.create-rifa {
+  margin-top: 60px;
+
+  .chamada {
+    display: grid;
+    grid-template-columns: 730px 300px;
+    justify-content: space-between;
+    align-items: center;
+
+    .titulo {
+      display: block;
+
+      .button {
+        margin-top: 20px;
+        font-size: 1.4rem;
+      }
+
+      h2 {
+        font-size: 4rem;
+        font-family: $font-sec;
+        font-weight: normal;
+      }
+    }
+
+    .mascote {
+      width: 300px;
+
+      img {
+        width: inherit;
+      }
+    }
+  }
+}
