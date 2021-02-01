@@ -21,6 +21,16 @@ html(lang="pt-br")
       a(href="index.html").logo
         img(src="./images/logo.png" alt="Logo do Bota na Rifa")
 
+    //- Menu
+    navbar.menu
+      - let l = ['Criar Rifa', 'Login'];
+      ul.nav
+        each item in l
+          a(href="#")
+            li #{item}
+        li(title="buscar").search
+          img(src="./images/search.svg" alt="Busque aqui")
+
     //- Banner
     .banner
       .container
