@@ -77,6 +77,7 @@ html(lang="pt-br")
                 span #{item.valor}
                 - iterator++;
 
+    //- Footer
     footer.footer
       .container
         h2.titulo Perguntas Frequentes
@@ -92,8 +93,18 @@ html(lang="pt-br")
         .logo
           img(src="./images/logo.png" alt="Logo Bota na Rifa")
         .copy
-          p Desenvolvido por Bota na Rifa - Termos e Condições - ©
+          p Desenvolvido por Bota na Rifa - 
+            a(href="#") Termos e Condições 
+            span - ©
             span(data-year)
+
+    //- modal vídeo
+    .overlay#overlay
+    #modal.modal
+      a.modal-close-btn &times;
+      .modal-content
+        h3 Assista e faça parte você também!
+        iframe(width="100%" height="500px" src="https://www.youtube.com/embed/zNnmawU8j8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 
     script(type="text/javascript").
       document.querySelector('[data-year]').innerText = new Date().getFullYear()

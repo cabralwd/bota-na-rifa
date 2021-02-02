@@ -34,3 +34,17 @@ class Accordion {
 const accordion = new Accordion('.tit');
 // for open every use showAll();
 accordion.showOne();
+
+setTimeout(() => {
+  document.getElementById('overlay').classList.add('is-visible');
+  document.getElementById('modal').classList.add('is-visible');
+}, 2000);
+
+document.querySelector('.modal-close-btn').addEventListener('click', function () {
+  document.getElementById('overlay').classList.remove('is-visible');
+  document.getElementById('modal').classList.remove('is-visible');
+});
+document.getElementById('overlay').addEventListener('click', function () {
+  document.getElementById('overlay').classList.remove('is-visible');
+  document.getElementById('modal').classList.remove('is-visible');
+});
