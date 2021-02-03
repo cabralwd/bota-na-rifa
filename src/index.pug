@@ -18,18 +18,31 @@ html(lang="pt-br")
 
     //- Header
     header.header
-      a(href="index.html").logo
-        img(src="./images/logo.png" alt="Logo do Bota na Rifa")
-
-    //- Menu
-    navbar.menu
-      - let l = ['Criar Rifa', 'Login'];
-      ul.nav
-        each item in l
-          a(href="#")
-            li #{item}
-        li(title="buscar").search
-          img(src="./images/search.svg" alt="Busque aqui")
+      .container
+        a(href="index.html").logo
+          img(src="./images/logo.png" alt="Logo do Bota na Rifa")
+        .burger
+          span.burger-open
+            svg(width="24" height="16" xmlns="http://www.w3.org/2000/svg")
+              g(fill="#FFFFFF" fill-rule="evenodd")
+                path(d="M0 0h24v2H0zM0 7h24v2H0zM0 14h24v2H0z")
+          span.burger-close
+            svg(width="20" height="20" xmlns="http://www.w3.org/2000/svg")
+              path(fill="#FFFFFF" fill-rule="evenodd" d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z")
+        //- Menu
+        navbar.menu
+          - let l = ['Criar Rifa', 'Login'];
+          ul.nav
+            each item in l
+              a(href="#")
+                li #{item}
+            li(title="buscar").search
+              svg( width="27" height="27" fill="none" xmlns="http://www.w3.org/2000/svg")
+                g(clip-path="url(#clip0)")
+                  path(d="M26.622 23.2l-6.464-6.679c-.464-.48-1.043-.67-1.294-.426-.252.243-.832.052-1.295-.427l-.093-.096c2.893-3.805 2.613-9.254-.862-12.728-3.792-3.792-9.94-3.792-13.731 0a9.71 9.71 0 000 13.731c3.533 3.534 9.11 3.77 12.923.719l.041.042c.463.48.635 1.065.382 1.308-.251.244-.08.83.384 1.308l6.46 6.68a1.208 1.208 0 001.708.029l1.813-1.755a1.21 1.21 0 00.028-1.707zM14.48 14.44a6.7 6.7 0 01-9.464.001 6.701 6.701 0 010-9.465 6.7 6.7 0 019.464 0 6.7 6.7 0 010 9.464z" fill="#FFFFFF")
+                defs
+                  clipPath(id="clip0")
+                    path(fill="#fff" d="M0 0h27v27H0z")
 
     //- Banner
     .banner

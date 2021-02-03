@@ -48,3 +48,13 @@ document.getElementById('overlay').addEventListener('click', function () {
   document.getElementById('overlay').classList.remove('is-visible');
   document.getElementById('modal').classList.remove('is-visible');
 });
+
+
+const burgerMenu = document.querySelector(".burger");
+const navbarMenu = document.querySelector(".nav");
+
+// Responsive Navbar Toggle
+burgerMenu.addEventListener("click", function () {
+  navbarMenu.classList.toggle("active");
+  burgerMenu.classList.toggle("active");
+});

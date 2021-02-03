@@ -66,12 +66,19 @@ body {
 // Header do site
 .header {
   position: fixed;
-  z-index: 9;
+  z-index: 9999;
   width: 100%;
   padding: 15px 0px;
   background: linear-gradient(180deg, #2A8D38 -24.12%, #1E5227 110%);
-  display: flex;
-  justify-content: center;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    @include tamanho-tela(desktop-up) {
+      justify-content: center;
+    }
+  }
 
   .logo {
     display: block;
@@ -82,119 +89,168 @@ body {
     }
   }
 
-  .header-content {
-    display: grid;
-    grid-template-columns: 1fr 30px;
-
-    @include tamanho-tela(celular) {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @include tamanho-tela(desktop) {
-      grid-template-columns: 2fr 3fr;
-    }
-  }
-
-  .menu-content {
+  .burger {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-  }
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    transition: all 0.35s ease;
 
-  .menu {
-    display: none;
-
-    @include tamanho-tela(desktop) {
-      display: block;
-    }
-
-    ul {
-      display: flex;
-
-      a {
-        padding: 5px;
-        margin: 0px 10px;
-        position: relative;
-
-        &::after {
-          @extend %hover;
-          bottom: 0px;
-        }
-
-        &:hover::before {
-          width: 100%;
-        }
-
-        &:hover::after {
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  .menu-mobile {
-    border-radius: 50%;
-    width: 32px;
-    transition: .2s ease-in-out;
-    display: block;
-
-    &.iPhone {
+    &-close {
       display: none;
     }
 
-    &:hover {
-      border: 2px solid $sec;
-    }
+    &.active {
+      .burger-open {
+        display: none;
+      }
 
-    img {
-      border-radius: 50%;
-      width: inherit;
-    }
-  }
-}
-
-// Menu Flutuante
-.menu {
-  position: fixed;
-  top: 140px;
-  right: 0;
-  z-index: 99;
-
-  .nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    a {
-      width: fit-content;
-      display: block;
-      font-weight: 700;
-      font-size: 1.25rem;
-      opacity: .6;
-      transition: .4s ease-in-out;
-
-      &:hover {
-        opacity: 1;
+      .burger-close {
+        display: flex;
       }
     }
 
-    li {
-      padding: 10px 8px 10px 20px;
-      width: inherit;
-      margin-bottom: 10px;
-      background-color: $pri;
-      border-radius: 20px 0px 0px 20px;
-      border: 3px solid $alert;
-      border-right: none;
+    @include tamanho-tela(tablet) {
+      display: none;
+    }
+  }
+
+  // Menu Flutuante
+  .menu {
+    z-index: inherit;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    background-color: $dark;
+    width: 100%;
+
+    @include tamanho-tela(tablet) {
+      position: relative;
+      top: initial;
+      left: initial;
+      width: auto;
+      background-color: transparent;
+      padding: 0;
     }
 
-    .search {
-      background: none;
-      cursor: pointer;
-      border: none;
+    @include tamanho-tela(desktop-up) {
+      position: fixed;
+      top: 140px;
+      right: 0;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+      height: 0;
+      overflow: hidden;
+      padding: 0;
+      opacity: 0;
+      transition: all .5s ease-in-out;
+
+      &.active {
+        width: 100%;
+        height: auto;
+        padding: 30px 15px;
+        opacity: 1;
+      }
+
+      @include tamanho-tela(tablet) {
+        flex-direction: row;
+        height: initial;
+        overflow: initial;
+        padding: 0;
+        opacity: 1;
+        transition: none;
+
+        &.active {
+          width: auto;
+          height: auto;
+          opacity: 1;
+        }
+      }
+
+      @include tamanho-tela(desktop-up) {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      a {
+        font-weight: 700;
+        font-size: 1.25rem;
+
+        &:hover {
+          text-decoration: underline;
+          color: $alert;
+        }
+
+        @include tamanho-tela(desktop-up) {
+          width: fit-content;
+          display: block;
+          opacity: .6;
+          transition: .4s ease-in-out;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+      }
+
+      li {
+        padding: 10px 0px;
+
+        @include tamanho-tela(tablet) {
+          padding: 10px 20px;
+        }
+
+        @include tamanho-tela(desktop-up) {
+          padding: 10px 8px 10px 20px;
+          width: inherit;
+          margin-bottom: 10px;
+          background-color: $pri;
+          border-radius: 20px 0px 0px 20px;
+          border: 3px solid $alert;
+          border-right: none;
+        }
+      }
+
+      .search {
+        background: none;
+        cursor: pointer;
+        border: none;
+        padding: 20px 0px 0px 0px;
+
+        @include tamanho-tela(tablet) {
+          padding: 7px 0px 7px 10px;
+        }
+
+        @include tamanho-tela(desktop-up) {
+          padding: 10px 8px 10px 20px;
+        }
+
+        svg {
+          &:hover {
+            path {
+              fill: $alert;
+            }
+          }
+
+          path {
+            @include tamanho-tela(desktop-up) {
+              fill: #253629;
+            }
+          }
+        }
+      }
     }
   }
 }
+
 
 // Barra de pesquisa
 .input-explorer {
