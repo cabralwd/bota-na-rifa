@@ -62,7 +62,6 @@ document.getElementById('overlay').addEventListener('click', function () {
   }, 1300);
 });
 
-
 const burgerMenu = document.querySelector(".burger");
 const navbarMenu = document.querySelector(".nav");
 
