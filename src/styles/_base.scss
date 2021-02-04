@@ -368,8 +368,9 @@ body {
 
   .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     .logo {
       width: 130px;
@@ -381,6 +382,11 @@ body {
 
     .copy {
       color: $light;
+      margin-top: 20px;
+
+      @include tamanho-tela(celular) {
+        margin-top: 0;
+      }
     }
 
   }
