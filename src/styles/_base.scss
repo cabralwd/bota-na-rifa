@@ -307,6 +307,8 @@ body {
 
 // Rodapé do site
 .footer {
+  position: relative;
+  z-index: 9999;
   background-color: $dark;
   color: $light;
   padding: 60px 0px;
@@ -361,6 +363,8 @@ body {
 .direitos {
   background: linear-gradient(180deg, #2A8D38 -24.12%, #1E5227 110%);
   padding: 15px 0px;
+  position: relative;
+  z-index: 9999;
 
   .container {
     display: flex;

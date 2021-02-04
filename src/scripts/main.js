@@ -40,13 +40,26 @@ setTimeout(() => {
   document.getElementById('modal').classList.add('is-visible');
 }, 2000);
 
+document.querySelector('.assista').addEventListener('click', () => {
+  document.getElementById('overlay').classList.add('is-visible');
+  document.getElementById('modal').classList.add('is-visible');
+});
+
 document.querySelector('.modal-close-btn').addEventListener('click', function () {
   document.getElementById('overlay').classList.remove('is-visible');
   document.getElementById('modal').classList.remove('is-visible');
+
+  setTimeout(() => {
+    document.querySelector('.assista').classList.add('active');
+  }, 1300);
 });
 document.getElementById('overlay').addEventListener('click', function () {
   document.getElementById('overlay').classList.remove('is-visible');
   document.getElementById('modal').classList.remove('is-visible');
+
+  setTimeout(() => {
+    document.querySelector('.assista').classList.add('active');
+  }, 1300);
 });
 
 
