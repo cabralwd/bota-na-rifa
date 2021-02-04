@@ -10,8 +10,13 @@
   background-color: $pri;
   box-shadow: 0px 4px 4px rgba($dark, .25);
   cursor: pointer;
+  font-size: 140%;
 
   &:hover {
     background-color: lighten($pri, 10%);
+  }
+
+  @include tamanho-tela(celular) {
+    font-size: 100%;
   }
 }

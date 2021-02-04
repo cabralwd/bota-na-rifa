@@ -3,9 +3,17 @@
 
   .estrutura {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     column-gap: 30px;
     row-gap: 60px;
+
+    @include tamanho-tela(celular) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tamanho-tela(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .item {
@@ -13,12 +21,17 @@
       background-color: $alert;
       font-style: normal;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 1.4rem;
       text-align: center;
-      padding: 12px 0;
+      padding: 12px 15px;
       line-height: 25px;
       color: $dark;
       margin-bottom: 10px;
+
+      @include tamanho-tela(tablet) {
+        font-size: 1rem;
+        padding: 12px 0px;
+      }
     }
   }
 }
