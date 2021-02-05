@@ -70,3 +70,13 @@ burgerMenu.addEventListener("click", function () {
   navbarMenu.classList.toggle("active");
   burgerMenu.classList.toggle("active");
 });
+
+
+//Busca do site
+document.querySelector('.search').addEventListener('click', () => {
+  document.querySelector('.search-open').classList.toggle('active');
+});
+
+document.querySelector('.search-close').addEventListener('click', () => {
+  document.querySelector('.search-open').classList.remove('active');
+});

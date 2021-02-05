@@ -253,54 +253,65 @@ body {
 
 
 // Barra de pesquisa
-.input-explorer {
-  position: relative;
-  max-width: 190px;
+.search-open {
+  position: fixed;
   width: 100%;
-  display: none;
+  background-color: $pri;
+  padding: 30px 0px;
+  transition: .4s ease-in-out;
+  bottom: -200px;
+  z-index: 9970;
+  opacity: 0;
 
-  @include tamanho-tela(celular) {
-    display: block;
+  &.active {
+    bottom: 0;
+    opacity: 1;
   }
 
-  &.hide {
-    display: block;
+  form {
+    display: flex;
+    flex-direction: column;
 
-    @include tamanho-tela(celular) {
-      display: none;
+    @include tamanho-tela(tablet) {
+      justify-content: center;
+      flex-direction: row;
     }
-  }
 
-  .search-input {
-    background-color: transparent;
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
-    border-bottom-color: $light;
-    border-bottom-width: thin;
-    outline: none;
-    color: $light;
-    padding: 5px 30px 5px 8px;
-    width: inherit;
-  }
+    input {
+      &[type="search"] {
+        padding: 10px 10px 10px 40px;
+        outline: none;
+        font-size: 2rem;
+        color: $dark2;
+        border-radius: 0px;
+        -webkit-appearance: none;
 
-  .icon-search {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    display: block;
-    border: none;
-    background: transparent;
-    width: 14px;
-    padding: 5px;
-    height: 14.5px;
-    background: url('../images/search-icon.svg') no-repeat;
-    font-size: 0px;
-    cursor: pointer;
-    outline: none;
+        @include tamanho-tela(tablet) {
+          font-size: 3rem;
+          flex-grow: 1;
+        }
+      }
 
-    &:hover {
-      background-image: url('../images/search-icon-green.svg');
+      &[type="button"] {
+        outline: none;
+        cursor: pointer;
+        font-size: 1.3rem;
+        color: $light;
+        background-color: $dark;
+        text-transform: uppercase;
+        border: none;
+        margin-top: 20px;
+        padding: 20px 0px;
+
+        &:hover {
+          background-color: lighten($pri, 10%);
+        }
+
+        @include tamanho-tela(tablet) {
+          margin-top: 0;
+          padding: 0 15px;
+        }
+      }
     }
   }
 }
@@ -308,7 +319,7 @@ body {
 // Rodapé do site
 .footer {
   position: relative;
-  z-index: 9999;
+  z-index: 9969;
   background-color: $dark;
   color: $light;
   padding: 60px 0px;
@@ -364,7 +375,7 @@ body {
   background: linear-gradient(180deg, #2A8D38 -24.12%, #1E5227 110%);
   padding: 15px 0px;
   position: relative;
-  z-index: 9999;
+  z-index: 9969;
 
   .container {
     display: flex;
