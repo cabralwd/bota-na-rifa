@@ -1,0 +1,57 @@
+.carousel {
+  margin-top: 120px;
+
+  // nav
+  .owl-nav {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 0px !important;
+
+    button {
+      margin: 0 !important;
+      background-color: rgba($dark, .6) !important;
+      outline: 0;
+
+      &:hover {
+        background-color: rgba($dark, .9) !important;
+      }
+
+      span {
+        font-size: 6rem;
+        color: $light;
+      }
+
+      &.owl-prev {
+        padding: 0px 40px !important;
+      }
+
+      &.owl-next {
+
+        padding: 0px 40px !important;
+      }
+    }
+
+
+  }
+
+  // dots carousel
+  .owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 20px;
+  }
+
+  .owl-theme .owl-dots .owl-dot span {
+    background: rgba($dark, .7);
+    width: 16px;
+    height: 16px;
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+    background: $light;
+  }
+}

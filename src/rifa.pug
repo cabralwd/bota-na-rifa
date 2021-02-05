@@ -15,7 +15,7 @@ html(lang="pt-br")
     header.header
       .container
         a(href="index.html").logo
-          img(src="./images/logo.png" alt="Logo do Bota na Rifa")
+          img(src="./images/api/lgo-da-rifa.png" alt="Logo do Bota na Rifa")
         .burger
           span.burger-open
             svg(width="24" height="16" xmlns="http://www.w3.org/2000/svg")
@@ -26,7 +26,7 @@ html(lang="pt-br")
               path(fill="#FFFFFF" fill-rule="evenodd" d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z")
         //- Menu
         navbar.menu
-          - let l = ['Criar Rifa', 'Login'];
+          - let l = ['Números', 'Pagamento', 'Como funciona', 'FAQ'];
           ul.nav
             each item in l
               a(href="#")
@@ -39,57 +39,22 @@ html(lang="pt-br")
                   clipPath(id="clip0")
                     path(fill="#fff" d="M0 0h27v27H0z")
 
-    //- Banner
-    .banner
-      .container
-        .fundo
-          .content
-            .titulo
-              h1 O melhor sistema #[br] de Rifas Online 
-            .felicidade
-              img(src="./images/mulher-vibrando.png" alt="Mulher Feliz com o prêmio")
+    //- Banner Carousel
+    main
+      .container 
+        .carousel.owl-carousel.owl-theme(data-timer="8000")
+          - let i = 0;
+          while i < 5
+            .image
+              img(src="./images/api/foto-da-rifa.jpg" alt="")
+            - i++;
 
-    //- Rifas paste 1
-    .rifas
-      - var items = [{titulo: 'Colossus Estrela', valor: '20'}, {titulo: '2 Tequilas Mexicanas', valor: '5'}, {titulo: 'R$ 1.500,00 na sua conta', valor: '20'}];
-      .container
-        .estrutura
-          each item, i in items
-            .item
-              img.image(src="./images/api/api-rifas-"+i+".jpg" alt="Rifa "+i)
-              h3.titulo #{item.titulo}
-              a.button(href="rifa.html") Participar com R$ 
-                span #{item.valor}
-
-    //- Chamada criar Rifa
-    .create-rifa
-      .container
-        .chamada
-          .titulo
-            h2 Não perca mais tempo, crie Já seu site de Rifa! 
-            a(href="#").button Criar meu site de Rifa 
-          .mascote
-            img.image(src="./images/mascote.svg" alt="Macote Bota na Rifa")
-
-    //- Rifas paste 2
-    .rifas
-      - var items = [{titulo: 'POP 110i 2021 ou R$ 7.000,00', valor: '10'}, {titulo: '01 barca de sushi para duas pessoas', valor: '20'}, {titulo: '35 cotas da rifa do Jetta TSI', valor: '5'}, {titulo: 'iPhone 12 lacrado ou 5 mil reais', valor: '120'}, {titulo: 'Moto Yamaha Xt660', valor: '100'}, {titulo: 'R$ 300,00 reais na conta', valor: '1'}];
-      .container
-        .estrutura
-          - let iterator = 3;
-          each item in items
-            .item
-              img.image(src="./images/api/api-rifas-"+iterator+".jpg" alt="Rifa "+iterator)
-              h3.titulo #{item.titulo}
-              a.button(href="rifa.html") Participar com R$ 
-                span #{item.valor}
-                - iterator++;
 
     //- Footer
     footer.footer
       .container
-        h2.titulo Perguntas Frequentes
-        - let lista = [{titulo: 'Como participo?', descricao: 'No campo acima, clique no botão verde participar, em seguida, serão exibidos todos os números disponíveis. Escolha o(s) número(s) de sua preferência, faça o pagamento para uma das opções disponibilizadas, envie o comprovante de pagamento para o whatsapp disponibilizado no campo "Enviar Comprovante", aguarde a confirmação de pagamento e pronto! Agora só aguardar até o dia do sorteio.'}, {titulo: 'Teste teste?', descricao: 'Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Si num tem leite então bota uma pinga aí cumpadi! Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.'}];
+        h2.titulo Informações Importantes
+        - let lista = [{titulo: 'Sobre o prêmio', descricao: 'No campo acima, clique no botão verde participar, em seguida, serão exibidos todos os números disponíveis. Escolha o(s) número(s) de sua preferência, faça o pagamento para uma das opções disponibilizadas, envie o comprovante de pagamento para o whatsapp disponibilizado no campo "Enviar Comprovante", aguarde a confirmação de pagamento e pronto! Agora só aguardar até o dia do sorteio.'}, {titulo: 'Sobre o Sorteio', descricao: 'Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Si num tem leite então bota uma pinga aí cumpadi! Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.'}, {titulo: 'Grupo Whatsapp', descricao: 'Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non.'}];
         ul.lista-perguntas
           each item in lista
             li
@@ -123,7 +88,12 @@ html(lang="pt-br")
 
     //- Busca do site
     include includes/busca.pug
+    //- Footer
+    include includes/footer.pug
 
     script(type="text/javascript").
       document.querySelector('[data-year]').innerText = new Date().getFullYear()
+    script(src="./scripts/libs/jquery.js")
+    script(src="./scripts/libs/owl.carousel.js")
     script(src="./scripts/bundle.js")
+

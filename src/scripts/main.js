@@ -77,6 +77,21 @@ document.querySelector('.search').addEventListener('click', () => {
   document.querySelector('.search-open').classList.toggle('active');
 });
 
-document.querySelector('.search-close').addEventListener('click', () => {
-  document.querySelector('.search-open').classList.remove('active');
+// document.querySelector('.search-close').addEventListener('click', () => {
+//   document.querySelector('.search-open').classList.remove('active');
+// });
+
+// Carousel da Rifa
+$(document).ready(function () {
+  let timeC = parseInt(document.querySelector('[data-timer]').dataset.timer, 10);
+  $('.owl-carousel').owlCarousel({
+    items: 1,
+    loop: false,
+    autoplay: true,
+    autoplayHoverPause: true,
+    rewind: true,
+    autoplayTimeout: timeC,
+    nav: true,
+    dots: false
+  });
 });
