@@ -95,3 +95,62 @@ $(document).ready(function () {
     dots: false
   });
 });
+
+// Funcionalidade para a escolha de números
+let qtdLimite;
+
+function createNumber(number = 0) {
+  let content = document.querySelector('[data-change-number]');
+  qtdLimite = content.children.length;
+
+  if (content.children.length === 10) {
+    alert("Você só pode escolher 10 números");
+    return;
+  }
+
+  let p = document.createElement('p');
+  let item = document.createElement('div');
+  p.innerHTML = `${number}`;
+  item.classList.add('item');
+  item.appendChild(p);
+  content.appendChild(item);
+
+  console.log('Número escolhido adicionado!')
+}
+
+function removeNumber(number) {
+  let content = document.querySelector('[data-change-number]');
+  qtdLimite = content.children.length;
+
+  if (content.children.length === 0) {
+    return;
+  }
+  // } else if (content.children.length === 10) {
+  //   alert("Você só pode escolher 10 números");
+  //   return;
+  // }
+
+  let list = content.children;
+  for (item of list) {
+    if (item.children[0].innerHTML === number) {
+      item.remove();
+    }
+  }
+}
+
+document.querySelectorAll('[data-number]').forEach(element => {
+  element.addEventListener('click', () => {
+    if (element.classList.contains('escolhido')) {
+      console.log('Este número já foi reservado!')
+      alert('Este número já foi reservado!')
+      return;
+    } else if (element.classList.contains('escolha')) {
+      removeNumber(element.dataset.number)
+      element.classList.remove('escolha');
+    } else {
+      createNumber(element.dataset.number)
+      if (qtdLimite === 10) return;
+      element.classList.add('escolha');
+    }
+  });
+});

@@ -330,8 +330,12 @@ body {
     text-align: center;
     font-family: $font-sec;
     font-weight: normal;
-    font-size: 1.825rem;
+    font-size: 1.525rem;
     margin-bottom: 30px;
+
+    @include tamanho-tela(celular) {
+      font-size: 1.825rem;
+    }
   }
 
   .lista-perguntas {

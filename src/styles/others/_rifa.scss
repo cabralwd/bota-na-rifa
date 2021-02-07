@@ -14,7 +14,7 @@
 
     button {
       margin: 0 !important;
-      background-color: rgba($dark, .6) !important;
+      background-color: rgba($dark, .4) !important;
       outline: 0;
 
       &:hover {
@@ -22,17 +22,21 @@
       }
 
       span {
-        font-size: 6rem;
         color: $light;
+        font-size: 3rem;
+
+        @include tamanho-tela(celular) {
+          font-size: 6rem;
+        }
       }
 
-      &.owl-prev {
-        padding: 0px 40px !important;
-      }
-
+      &.owl-prev,
       &.owl-next {
+        padding: 0px 20px !important;
 
-        padding: 0px 40px !important;
+        @include tamanho-tela(celular) {
+          padding: 0px 40px !important;
+        }
       }
     }
 
@@ -53,5 +57,258 @@
   .owl-theme .owl-dots .owl-dot.active span,
   .owl-theme .owl-dots .owl-dot:hover span {
     background: $light;
+  }
+}
+
+.compra {
+  margin-top: 30px;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include tamanho-tela(tablet) {
+      grid-template-columns: 1fr 2fr;
+      column-gap: 30px;
+      row-gap: 60px;
+    }
+
+    @include tamanho-tela(desktop) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .descricao {
+      font-size: 110%;
+
+      @include tamanho-tela(celular) {
+        font-size: 120%;
+      }
+
+      h2 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: .9em;
+        line-height: 1.4;
+        margin-bottom: 30px;
+
+        @include tamanho-tela(tablet) {
+          margin-bottom: 0px;
+        }
+      }
+    }
+
+    .operacao {
+      .view1 {
+        display: flex;
+        flex-direction: column;
+
+        @include tamanho-tela(celular) {
+          row-gap: 30px;
+          column-gap: 30px;
+          flex-direction: row;
+        }
+
+        .button {
+          padding-left: 10px;
+          padding-right: 10px;
+          width: 100%;
+          line-height: 1;
+
+          &:first-child {
+            margin-bottom: 30px;
+            background-color: $dark;
+
+            &:hover {
+              background-color: lighten($dark, 10%);
+            }
+          }
+
+          @include tamanho-tela(celular) {
+            flex: 2;
+
+            &:first-child {
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      hr {
+        background-color: $alert;
+        border: none;
+        height: 5px;
+        margin: 20px 0px;
+      }
+
+      .view2 {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include tamanho-tela(celular) {
+          align-items: flex-start;
+          justify-content: space-between;
+          column-gap: 30px;
+          flex-wrap: nowrap;
+        }
+
+        .button {
+          margin: 20px 0 0 0;
+          width: 100%;
+
+          @include tamanho-tela(celular) {
+            margin: 0;
+            max-width: 270px;
+          }
+        }
+      }
+
+      .box-reserva {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        color: $light;
+        margin-top: 30px;
+
+        @include tamanho-tela(celular) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .item {
+          background-color: $dark;
+          border: 3px dashed $progress;
+          display: flex;
+          min-height: 80px;
+          align-items: center;
+          font-weight: 700;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    }
+
+  }
+
+}
+
+.contagem {
+  margin-top: 60px;
+
+  @include tamanho-tela(tablet) {
+    margin-top: 30px;
+  }
+
+  .escolha-de-numeros {
+    width: 100%;
+    border: 3px dashed $dark;
+    background-color: $sec;
+    padding: 20px;
+
+    .numeros {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+
+      @include tamanho-tela(celular) {
+        grid-template-columns: repeat(7, 1fr);
+      }
+
+      @include tamanho-tela(tablet) {
+        grid-template-columns: repeat(10, 1fr);
+        gap: 30px;
+      }
+
+      @include tamanho-tela(desktop) {
+        grid-template-columns: repeat(12, 1fr);
+      }
+
+      .item {
+        background-color: rgba($dark2, .9);
+        color: $light;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 0;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 4px 4px 4px rgba($dark, 0.25);
+
+        &:hover {
+          background-color: lighten($dark2, 15%);
+        }
+
+        &.escolhido {
+          background-color: rgba($danger, 1);
+          cursor: no-drop;
+        }
+
+        &.escolha {
+          background-color: rgba($dark, 1);
+        }
+
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .numeros-escolhidos {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      @include tamanho-tela(celular) {
+        flex-direction: row;
+        align-items: flex-end;
+      }
+
+
+      .conteudo {
+        flex: 2;
+        margin-bottom: 30px;
+
+        @include tamanho-tela(celular) {
+          margin-bottom: 0px;
+          margin-right: 60px;
+        }
+
+        h4 {
+          font-size: 1.6rem;
+          text-align: center;
+          margin-bottom: 10px;
+
+          @include tamanho-tela(celular) {
+            font-size: 1.2rem;
+            text-align: left;
+          }
+        }
+
+        .numeros {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(40px, 45px));
+          gap: 15px;
+
+          .item {
+            background-color: $dark;
+            padding: 12px 0px;
+
+
+            p {
+              font-size: 1.1rem;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+
+      .finalizar {
+        .button {
+          width: 100%;
+        }
+      }
+    }
   }
 }
