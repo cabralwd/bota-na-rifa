@@ -101,7 +101,8 @@ let qtdLimite;
 
 function createNumber(number = 0) {
   let content = document.querySelector('[data-change-number]');
-  qtdLimite = content.children.length;
+  qtdLimite = content.children.length + 1;
+  console.log(qtdLimite);
 
   if (content.children.length === 10) {
     alert("Você só pode escolher 10 números");
@@ -120,15 +121,12 @@ function createNumber(number = 0) {
 
 function removeNumber(number) {
   let content = document.querySelector('[data-change-number]');
-  qtdLimite = content.children.length;
+  qtdLimite = content.children.length - 1;
+  console.log(qtdLimite);
 
-  if (content.children.length === 0) {
-    return;
+  if (qtdLimite === 0) {
+    document.querySelector('.numeros-escolhidos').classList.remove('active');
   }
-  // } else if (content.children.length === 10) {
-  //   alert("Você só pode escolher 10 números");
-  //   return;
-  // }
 
   let list = content.children;
   for (item of list) {
@@ -140,6 +138,12 @@ function removeNumber(number) {
 
 document.querySelectorAll('[data-number]').forEach(element => {
   element.addEventListener('click', () => {
+
+    const changes = document.querySelector('.numeros-escolhidos');
+    if (changes.children[0].children[1].children.length === 0) {
+      document.querySelector('.numeros-escolhidos').classList.add('active');
+    }
+
     if (element.classList.contains('escolhido')) {
       console.log('Este número já foi reservado!')
       alert('Este número já foi reservado!')

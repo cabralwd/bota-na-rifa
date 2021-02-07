@@ -255,10 +255,14 @@
     }
 
     .numeros-escolhidos {
+      display: none;
       margin-top: 30px;
-      display: flex;
       justify-content: space-between;
       flex-direction: column;
+
+      &.active {
+        display: flex;
+      }
 
       @include tamanho-tela(celular) {
         flex-direction: row;
@@ -294,7 +298,7 @@
           .item {
             background-color: $dark;
             padding: 12px 0px;
-
+            transition: .3s linear;
 
             p {
               font-size: 1.1rem;
