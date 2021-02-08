@@ -96,6 +96,11 @@ $(document).ready(function () {
   });
 });
 
+// Reservar Números
+document.querySelector("[data-reserva]").addEventListener('click', () => {
+  document.querySelector('.contagem').classList.add('active');
+});
+
 // Funcionalidade para a escolha de números
 let qtdLimite;
 
@@ -104,8 +109,8 @@ function createNumber(number = 0) {
   qtdLimite = content.children.length + 1;
   console.log(qtdLimite);
 
-  if (content.children.length === 10) {
-    alert("Você só pode escolher 10 números");
+  if (content.children.length === 30) {
+    alert("Você só pode escolher 30 números");
     return;
   }
 
@@ -153,8 +158,14 @@ document.querySelectorAll('[data-number]').forEach(element => {
       element.classList.remove('escolha');
     } else {
       createNumber(element.dataset.number)
-      if (qtdLimite === 10) return;
+      if (qtdLimite === 31) {
+        return;
+      }
       element.classList.add('escolha');
     }
   });
+});
+
+document.querySelector('[data-reservar').addEventListener('click', () => {
+  document.querySelector('.finalizacao').classList.add('active');
 });

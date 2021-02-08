@@ -59,13 +59,13 @@ html(lang="pt-br")
             p APENAS: R$ 45,00 #[br]#[br]1º - 15 centenas (R$ 2.025,00) #[br]2º - 8 centenas (R$ 1.080,00) #[br]3º - 4 centenas (R$ 540,00) #[br]4º - 4 centenas (R$ 540,00) #[br]#[br]Premiação de centenas para Bmw 320i.#[br]@100zinhodas... Saiba mais em Sobre o Prêmio no final da página. #[br]#[br]Sorteio p/ Deu no Poste
           .operacao 
             .view1
-              .button Reserve seus números &#129123;
+              a.button(href="#contagem" data-reserva) Reserve seus números &#129123;
               .button Meus Números
             hr
             .view2
               span Valor da Rifa: 
                 strong R$ 45,00
-              .button Enviar Comprovantes
+              a.button(href="https://wa.me/5511995854874" target="_blank") Enviar Comprovantes
             .box-reserva
               - let items = [{titulo: 'Números', qtd: '99'}, {titulo: 'Disponíveis', qtd: '49'}, {titulo: 'Reservados', qtd: '22'}, {titulo: 'Pagos', qtd: '29'}]
 
@@ -74,7 +74,7 @@ html(lang="pt-br")
                   span #{item.titulo}
                   span #{item.qtd}
 
-      .contagem
+      .contagem#contagem
         .container
           .escolha-de-numeros
             .numeros 
@@ -100,7 +100,53 @@ html(lang="pt-br")
                 h4 Números escohidos:
                 .numeros(data-change-number)
               .finalizar 
-                .button Finalizar
+                a.button(href="#finalizacao" data-reservar) Finalizar
+
+      .finalizacao#finalizacao 
+        .container 
+          .titulo 
+            h4 Finalize sua reserva 
+          form(action="")
+            input(type="text" placeholder="Nome:" value="") 
+            input(type="phone" placeholder="Telefone:" value="") 
+            .button Concluir
+
+      .transacoes 
+        .container 
+          .titulo 
+            h4 Dados de Pagamento
+          .bancos             
+            - let bancos = [{banco: 'Caixa Econômica Federal', agencia: '000000', conta: '00000-0', pix: ''}, {banco: 'Banco do Brasil', agencia: '000000', conta: '00000-0', pix: ''}, {banco: 'Itaú', agencia: '000000', conta: '00000-0', pix: 'CPF/CNPJ: 29.332.782/0001-48'}]
+            each banco, index in bancos 
+              case index === 0
+                when true
+                  .item
+                    img(src="./images/api/banco-"+index+".png" alt="")
+                    .infos
+                      p.nome-banco #{banco.banco}
+                      p.agencia Agência: #{banco.agencia}
+                      p.conta-corrente Conta corrente: #{banco.conta}
+                      p.pix Pix: #{banco.pix}
+              .item
+                img(src="./images/api/banco-"+index+".png" alt="")
+                .infos
+                  p.nome-banco #{banco.banco}
+                  p.agencia Agência: #{banco.agencia}
+                  p.conta-corrente Conta corrente: #{banco.conta}
+                  p.pix Pix: #{banco.pix}
+
+      .funcionamento  
+        .container 
+          .titulo   
+            h4 Como funciona?
+          .box  
+            - let boxes = [{titulo: '1. Escolha seus números', descricao: 'Escolha seus números da sorte. Você pode escolher até 30 números'}, {titulo: '2. Faça o Pagamento', descricao: 'Escolha uma Forma de pagamento e envie o comprovante via whatsapp'}, {titulo: '3. Pronto!', descricao: 'Aguarde a confirmação de seu número e Boa sorte!'}]
+            each box, index in boxes 
+              .item 
+                img(src="./images/pag-"+index+".svg" alt="")
+                h5.tit #{box.titulo}
+                p.desc #{box.descricao}
+              p.plus +
 
     //- Footer
     footer.footer

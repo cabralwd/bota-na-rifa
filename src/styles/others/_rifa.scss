@@ -195,6 +195,12 @@
 
 .contagem {
   margin-top: 60px;
+  scroll-margin-top: 90px;
+  display: none;
+
+  &.active {
+    display: block;
+  }
 
   @include tamanho-tela(tablet) {
     margin-top: 30px;
@@ -315,4 +321,165 @@
       }
     }
   }
+}
+
+.finalizacao {
+  display: none;
+  margin-top: 60px;
+  scroll-margin-top: 90px;
+
+  &.active {
+    display: block;
+  }
+
+  @include tamanho-tela(celular) {
+    margin-top: 30px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    @include tamanho-tela(celular) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    input {
+      border: 3px solid $dark2;
+      padding: 10px 20px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      font-size: 1.25rem;
+      box-shadow: 4px 4px 4px rgba($dark, 0.25);
+
+      @include tamanho-tela(celular) {
+        margin: 0 30px 0px 0px;
+      }
+    }
+
+    .button {
+      width: 100%;
+      margin: 10px 0 0 0;
+
+      @include tamanho-tela(celular) {
+        width: auto;
+        margin: 20px 0 0 0;
+      }
+
+      @include tamanho-tela(tablet) {
+        width: auto;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.transacoes {
+  margin-top: 60px;
+
+  @include tamanho-tela(celular) {
+    margin-top: 30px;
+  }
+
+  .bancos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    @include tamanho-tela(celular) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tamanho-tela(tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include tamanho-tela(desktop) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .item {
+      background-color: $sec;
+      border: 3px solid $dark;
+      border-radius: 15px;
+      padding: 20px 20px;
+
+      p {
+        line-height: 1.4;
+      }
+
+      img {
+        margin: 0 auto 20px auto;
+      }
+    }
+  }
+}
+
+.funcionamento {
+  margin-top: 60px;
+
+  @include tamanho-tela(celular) {
+    margin-top: 30px;
+  }
+
+  background-image: url('../images/background-como-funciona.png');
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: cover;
+
+  @include tamanho-tela(tablet) {
+    background-repeat: no-repeat;
+  }
+
+  .box {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include tamanho-tela(tablet) {
+      justify-content: space-between;
+
+      grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    }
+
+    .item {
+
+      @include tamanho-tela(tablet) {
+        max-width: 230px;
+      }
+
+      img {
+        margin: 0 auto;
+        max-height: 210px;
+      }
+
+      h5,
+      p {
+        font-size: 1.25rem;
+        text-align: center;
+
+        @include tamanho-tela(celular) {
+          text-align: left;
+        }
+      }
+    }
+
+    .plus {
+      display: none;
+
+      @include tamanho-tela(tablet) {
+        display: block;
+        font-family: $font-sec;
+        font-size: 100px;
+        line-height: 1;
+        color: $pri;
+        margin: 20px auto 0 auto;
+
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+
 }

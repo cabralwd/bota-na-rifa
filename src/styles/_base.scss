@@ -25,6 +25,10 @@ img {
   display: block;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $light;
   color: $dark;
@@ -39,6 +43,19 @@ body {
     sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   -webkit-font-smoothing: antialiased;
+}
+
+main {
+  .titulo {
+    font-size: 150%;
+    text-align: center;
+    margin-bottom: 15px;
+
+    @include tamanho-tela(celular) {
+      font-size: 1.25em;
+      text-align: left;
+    }
+  }
 }
 
 // Container principal
@@ -243,7 +260,7 @@ body {
 
           path {
             @include tamanho-tela(desktop-up) {
-              fill: #253629;
+              fill: #248232;
             }
           }
         }
