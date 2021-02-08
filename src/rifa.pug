@@ -105,8 +105,8 @@ html(lang="pt-br")
           .titulo 
             h4 Finalize sua reserva 
           form(action="")
-            input(type="text" placeholder="Nome:" value="") 
-            input(type="phone" placeholder="Telefone:" value="") 
+            input(type="text" placeholder="Nome:") 
+            input(type="tel" attrname="tel" placeholder="Telefone:") 
             .button Concluir
 
       .transacoes 
@@ -191,5 +191,6 @@ html(lang="pt-br")
       document.querySelector('[data-year]').innerText = new Date().getFullYear()
     script(src="./scripts/libs/jquery.js")
     script(src="./scripts/libs/owl.carousel.js")
+    script(src="./scripts/libs/vanilla-masker.js")
     script(src="./scripts/bundle.js")
 

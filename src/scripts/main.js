@@ -169,3 +169,8 @@ document.querySelectorAll('[data-number]').forEach(element => {
 document.querySelector('[data-reservar').addEventListener('click', () => {
   document.querySelector('.finalizacao').classList.add('active');
 });
+
+var telMask = ['(99) 9999-99999', '(99) 99999-9999'];
+var tel = document.querySelector('input[attrname=tel]');
+VMasker(tel).maskPattern(telMask[0]);
+tel.addEventListener('input', inputHandler.bind(undefined, telMask, 14), false);
