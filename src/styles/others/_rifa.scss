@@ -333,7 +333,7 @@
   }
 
   @include tamanho-tela(celular) {
-    margin-top: 30px;
+    margin-top: 80px;
   }
 
   form {
@@ -376,10 +376,10 @@
 }
 
 .transacoes {
-  margin-top: 60px;
+  margin-top: 120px;
 
   @include tamanho-tela(celular) {
-    margin-top: 30px;
+    margin-top: 80px;
   }
 
   .bancos {
@@ -417,10 +417,10 @@
 }
 
 .funcionamento {
-  margin-top: 60px;
+  margin-top: 120px;
 
   @include tamanho-tela(celular) {
-    margin-top: 30px;
+    margin-top: 80px;
   }
 
   background-image: url('../images/background-como-funciona.png');
@@ -435,9 +435,11 @@
   .box {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 120px;
 
     @include tamanho-tela(tablet) {
       justify-content: space-between;
+      gap: 0;
 
       grid-template-columns: repeat(auto-fit, minmax(100px, auto));
     }
@@ -451,6 +453,16 @@
       img {
         margin: 0 auto;
         max-height: 210px;
+        min-height: 210px;
+      }
+
+      h5 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        line-height: 1.4;
       }
 
       h5,

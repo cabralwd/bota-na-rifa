@@ -79,15 +79,13 @@ html(lang="pt-br")
           .escolha-de-numeros
             .numeros 
               - let n = 0;
-              while n <= 150
+              while n <= 35
                 case n
                   when 12
                   when 18
                   when 20
-                  when 99
-                  when 88
-                  when 131
-                  when 150
+                  when 22
+                  when 30
                     .item.escolhido(data-number=n)
                       p #{n}
                     - n++;

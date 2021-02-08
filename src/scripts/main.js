@@ -130,7 +130,7 @@ function removeNumber(number) {
   console.log(qtdLimite);
 
   if (qtdLimite === 0) {
-    document.querySelector('.numeros-escolhidos').classList.remove('active');
+    document.querySelector('.numeros-escolhidos').classList.remove('active'); document.querySelector('.finalizacao').classList.remove('active');
   }
 
   let list = content.children;
