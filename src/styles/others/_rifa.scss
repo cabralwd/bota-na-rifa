@@ -1,3 +1,7 @@
+.banner-rifa.home .owl-nav {
+  display: none;
+}
+
 .carousel {
   margin-top: 120px;
 
@@ -423,13 +427,23 @@
     margin-top: 80px;
   }
 
-  background-image: url('../images/background-como-funciona.png');
+  // background-image: url('../images/background-como-funciona.png');
   background-repeat: repeat;
   background-position: center center;
   background-size: cover;
 
   @include tamanho-tela(tablet) {
     background-repeat: no-repeat;
+  }
+
+  .titulo {
+    margin: 0px 0px 40px 0px;
+    font-size: 1rem;
+    text-align: center;
+
+    @include tamanho-tela(celular) {
+      font-size: 2.2rem;
+    }
   }
 
   .box {

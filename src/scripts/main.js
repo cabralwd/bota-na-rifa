@@ -35,32 +35,33 @@ const accordion = new Accordion('.tit');
 // for open every use showAll();
 accordion.showOne();
 
-setTimeout(() => {
-  document.getElementById('overlay').classList.add('is-visible');
-  document.getElementById('modal').classList.add('is-visible');
-}, 2000);
+// setTimeout(() => {
+//   document.getElementById('overlay').classList.add('is-visible');
+//   document.getElementById('modal').classList.add('is-visible');
+// }, 2000);
 
-document.querySelector('.assista').addEventListener('click', () => {
-  document.getElementById('overlay').classList.add('is-visible');
-  document.getElementById('modal').classList.add('is-visible');
-});
+// document.querySelector('.assista').addEventListener('click', () => {
+//   document.getElementById('overlay').classList.add('is-visible');
+//   document.getElementById('modal').classList.add('is-visible');
+// });
 
-document.querySelector('.modal-close-btn').addEventListener('click', function () {
-  document.getElementById('overlay').classList.remove('is-visible');
-  document.getElementById('modal').classList.remove('is-visible');
+// document.querySelector('.modal-close-btn').addEventListener('click', function () {
+//   document.getElementById('overlay').classList.remove('is-visible');
+//   document.getElementById('modal').classList.remove('is-visible');
 
-  setTimeout(() => {
-    document.querySelector('.assista').classList.add('active');
-  }, 1300);
-});
-document.getElementById('overlay').addEventListener('click', function () {
-  document.getElementById('overlay').classList.remove('is-visible');
-  document.getElementById('modal').classList.remove('is-visible');
+//   setTimeout(() => {
+//     document.querySelector('.assista').classList.add('active');
+//   }, 1300);
+// });
 
-  setTimeout(() => {
-    document.querySelector('.assista').classList.add('active');
-  }, 1300);
-});
+// document.getElementById('overlay').addEventListener('click', function () {
+//   document.getElementById('overlay').classList.remove('is-visible');
+//   document.getElementById('modal').classList.remove('is-visible');
+
+//   setTimeout(() => {
+//     document.querySelector('.assista').classList.add('active');
+//   }, 1300);
+// });
 
 const burgerMenu = document.querySelector(".burger");
 const navbarMenu = document.querySelector(".nav");
@@ -92,14 +93,18 @@ $(document).ready(function () {
     rewind: true,
     autoplayTimeout: timeC,
     nav: true,
-    dots: false
+    dots: false,
+    animateIn: 'fadeIn',
+    animateOut: 'fadeOut'
   });
 });
 
 // Reservar Números
-document.querySelector("[data-reserva]").addEventListener('click', () => {
-  document.querySelector('.contagem').classList.add('active');
-});
+if (document.querySelector("[data-reserva]")) {
+  document.querySelector("[data-reserva]").addEventListener('click', () => {
+    document.querySelector('.contagem').classList.add('active');
+  });
+}
 
 // Funcionalidade para a escolha de números
 let qtdLimite;
@@ -166,11 +171,15 @@ document.querySelectorAll('[data-number]').forEach(element => {
   });
 });
 
-document.querySelector('[data-reservar').addEventListener('click', () => {
-  document.querySelector('.finalizacao').classList.add('active');
-});
+if (document.querySelector('[data-reservar')) {
+  document.querySelector('[data-reservar').addEventListener('click', () => {
+    document.querySelector('.finalizacao').classList.add('active');
+  });
 
-var telMask = ['(99) 9999-99999', '(99) 99999-9999'];
-var tel = document.querySelector('input[attrname=tel]');
-VMasker(tel).maskPattern(telMask[0]);
-tel.addEventListener('input', inputHandler.bind(undefined, telMask, 14), false);
+  var telMask = ['(99) 9999-99999', '(99) 99999-9999'];
+  var tel = document.querySelector('input[attrname=tel]');
+  VMasker(tel).maskPattern(telMask[0]);
+  tel.addEventListener('input', inputHandler.bind(undefined, telMask, 14), false);
+}
+
+

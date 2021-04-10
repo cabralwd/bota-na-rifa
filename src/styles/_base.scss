@@ -30,8 +30,8 @@ html {
 }
 
 body {
-  background-color: $light;
-  color: $dark;
+  background-color: $dark;
+  color: $light;
   font-style: normal;
   font-family: $font-default,
     -apple-system,
@@ -87,7 +87,7 @@ main {
   top: 0;
   width: 100%;
   padding: 15px 0px;
-  background: linear-gradient(180deg, #2A8D38 -24.12%, #1E5227 110%);
+  background: linear-gradient(180deg, #212121 -24.12%, #424242 110%);
 
   .container {
     display: flex;
@@ -100,7 +100,8 @@ main {
 
   .logo {
     display: block;
-    max-width: 200px;
+    max-width: 150px;
+    height: auto;
 
     img {
       width: inherit;
@@ -141,9 +142,9 @@ main {
   .menu {
     z-index: inherit;
     position: absolute;
-    top: 58px;
+    top: -20px;
     left: 0;
-    background-color: $dark;
+    background-color: $dark2;
     width: 100%;
 
     @include tamanho-tela(tablet) {
@@ -254,13 +255,13 @@ main {
         svg {
           &:hover {
             path {
-              fill: $alert;
+              fill: $danger;
             }
           }
 
           path {
             @include tamanho-tela(desktop-up) {
-              fill: #248232;
+              fill: $pri;
             }
           }
         }
@@ -384,7 +385,7 @@ main {
 
     .info {
       padding: 0px;
-      border-bottom: 1px solid $alert;
+      border-bottom: 1px solid $pri;
 
       max-height: 0;
       overflow: hidden;
@@ -394,7 +395,7 @@ main {
 }
 
 .direitos {
-  background: linear-gradient(180deg, #2A8D38 -24.12%, #1E5227 110%);
+  background: linear-gradient(180deg, #424242 -24.12%, #212121 110%);
   padding: 15px 0px;
   position: relative;
   z-index: 9969;
@@ -406,7 +407,7 @@ main {
     justify-content: space-between;
 
     .logo {
-      width: 130px;
+      width: 80px;
 
       img {
         width: inherit;

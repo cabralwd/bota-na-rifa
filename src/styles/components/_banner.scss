@@ -1,89 +1,89 @@
-.banner {
-  padding-top: 140px;
+// .banner {
+//   padding-top: 140px;
 
-  .fundo {
-    background: linear-gradient(45deg, $pri, $alert);
+//   .fundo {
+//     background: linear-gradient(45deg, $pri, $alert);
 
-    @include tamanho-tela(desktop-up) {
-      background: conic-gradient(from 150deg at 76.8% 50%, #2BA84A 0deg, #DFB018 360deg);
-    }
-  }
+//     @include tamanho-tela(desktop-up) {
+//       background: conic-gradient(from 150deg at 76.8% 50%, #2BA84A 0deg, #DFB018 360deg);
+//     }
+//   }
 
-  .content {
-    position: relative;
-    padding: 0px 10px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    background-image: url('../images/banner-principal.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+//   .content {
+//     position: relative;
+//     padding: 0px 10px;
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     height: auto;
+//     background-image: url('../images/banner-principal.png');
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     background-size: cover;
 
-    @include tamanho-tela(tablet) {
-      padding: 0px 50px;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: row;
-    }
+//     @include tamanho-tela(tablet) {
+//       padding: 0px 50px;
+//       justify-content: space-between;
+//       align-items: center;
+//       flex-direction: row;
+//     }
 
-    @include tamanho-tela(tablet) {
-      background-size: contain;
-      background-position: center;
-      min-height: 320px;
-    }
-  }
+//     @include tamanho-tela(tablet) {
+//       background-size: contain;
+//       background-position: center;
+//       min-height: 320px;
+//     }
+//   }
 
-  .titulo {
-    h1 {
-      font-family: $font-sec, sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      color: $light;
-      font-size: 2rem;
-      margin: 0;
-      text-align: center;
-      margin-top: 40px;
+//   .titulo {
+//     h1 {
+//       font-family: $font-sec, sans-serif;
+//       font-style: normal;
+//       font-weight: 400;
+//       color: $light;
+//       font-size: 2rem;
+//       margin: 0;
+//       text-align: center;
+//       margin-top: 40px;
 
-      @include tamanho-tela(celular) {
-        font-size: 3rem;
-        margin-top: 0;
-      }
+//       @include tamanho-tela(celular) {
+//         font-size: 3rem;
+//         margin-top: 0;
+//       }
 
-      @include tamanho-tela(tablet) {
-        font-size: 4rem;
-        text-align: left;
+//       @include tamanho-tela(tablet) {
+//         font-size: 4rem;
+//         text-align: left;
 
-        br {
-          display: none;
-        }
-      }
+//         br {
+//           display: none;
+//         }
+//       }
 
-      @include tamanho-tela(desktop-up) {
-        font-size: 5rem;
+//       @include tamanho-tela(desktop-up) {
+//         font-size: 5rem;
 
-        br {
-          display: block;
-        }
-      }
-    }
-  }
+//         br {
+//           display: block;
+//         }
+//       }
+//     }
+//   }
 
-  .felicidade {
-    width: auto;
+//   .felicidade {
+//     width: auto;
 
-    @include tamanho-tela(tablet) {
-      width: 660px;
-    }
+//     @include tamanho-tela(tablet) {
+//       width: 660px;
+//     }
 
-    @include tamanho-tela(desktop-up) {
-      width: 260px;
-    }
+//     @include tamanho-tela(desktop-up) {
+//       width: 260px;
+//     }
 
-    img {
-      width: inherit;
-      margin: 0 auto;
-    }
-  }
-}
+//     img {
+//       width: inherit;
+//       margin: 0 auto;
+//     }
+//   }
+// }

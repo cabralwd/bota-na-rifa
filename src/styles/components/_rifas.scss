@@ -1,6 +1,40 @@
 .rifas {
   margin-top: 60px;
 
+  &.encerradas {
+    .item {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: 'encerrado';
+        color: $dark;
+        padding: 10px 15px;
+        background-color: $danger;
+        font-weight: 900;
+      }
+
+      .button {
+        background-color: $danger;
+
+        &:hover {
+          background-color: $dark2;
+          color: $light;
+        }
+      }
+    }
+  }
+
+  .titulo-p {
+    margin: 120px 0px 40px 0px;
+    font-size: 1rem;
+    text-align: center;
+
+    @include tamanho-tela(celular) {
+      font-size: 2.2rem;
+    }
+  }
+
   .estrutura {
     display: grid;
     grid-template-columns: 1fr;
@@ -18,14 +52,14 @@
 
   .item {
     .titulo {
-      background-color: $alert;
+      background-color: $dark2;
       font-style: normal;
       font-weight: 500;
       font-size: 1.4rem;
       text-align: center;
       padding: 12px 15px;
       line-height: 25px;
-      color: $dark;
+      color: $light;
       margin-bottom: 10px;
 
       @include tamanho-tela(tablet) {

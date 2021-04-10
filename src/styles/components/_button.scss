@@ -13,7 +13,8 @@
   font-size: 140%;
 
   &:hover {
-    background-color: lighten($pri, 10%);
+    background-color: lighten($progress, 10%);
+    color: $dark;
   }
 
   @include tamanho-tela(celular) {

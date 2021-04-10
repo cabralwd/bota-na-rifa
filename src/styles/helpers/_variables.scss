@@ -1,20 +1,19 @@
 // Fonts defaults
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;500;700&display=swap');
 
 // Cores do site
-$dark: #253629;
+$dark: #292929;
 $dark2: #495A4D;
-$pri: #248232;
+$pri: #797979;
 $sec: #FFFCE4;
 $light: #FCFFFC;
 $danger: #FF533D;
-$alert: #FEC200;
-$progress: #1ADA37;
+$alert: #0c2705;
+$progress: #028e00;
 
 // Fonts
 $font-default: 'Saira';
-$font-sec: 'Luckiest Guy';
+$font-sec: 'Saira';
 
 // Consulta de media queries
 @mixin tamanho-tela($size) {

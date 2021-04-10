@@ -15,7 +15,7 @@ html(lang="pt-br")
     header.header
       .container
         a(href="index.html").logo
-          img(src="./images/logo.png" alt="Logo do Bota na Rifa")
+          img(src="./images/nacional-rifas.png" alt="Logo da Nacional Rifas")
         .burger
           span.burger-open
             svg(width="24" height="16" xmlns="http://www.w3.org/2000/svg")
@@ -26,7 +26,7 @@ html(lang="pt-br")
               path(fill="#FFFFFF" fill-rule="evenodd" d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z")
         //- Menu
         navbar.menu
-          - let l = ['Criar Rifa', 'Login'];
+          - let l = ['Inicio', 'Participar'];
           ul.nav
             each item in l
               a(href="#")
@@ -39,57 +39,87 @@ html(lang="pt-br")
                   clipPath(id="clip0")
                     path(fill="#fff" d="M0 0h27v27H0z")
 
-    //- Banner
-    .banner
-      .container
-        .fundo
-          .content
-            .titulo
-              h1 O melhor sistema #[br] de Rifas Online 
-            .felicidade
-              img(src="./images/mulher-vibrando.png" alt="Mulher Feliz com o prêmio")
+    //- Banner    
+    .banner-rifa.home
+      .container 
+        .carousel.owl-carousel.owl-theme(data-timer="8000")
+          - let i = 0;
+          - let j = 900;
+          while i < 5
+            .image
+              img(src="https://via.placeholder.com/1900x" + (i+j) alt="")
+            - i++;
+
+      .funcionamento  
+        .container 
+          .titulo   
+            h4 COMO FUNCIONA?
+          .box  
+            - let boxes = [{titulo: '1. Escolha seus números', descricao: 'Escolha seus números da sorte. Você pode escolher até 30 números'}, {titulo: '2. Faça o Pagamento', descricao: 'Escolha uma Forma de pagamento e envie o comprovante via whatsapp'}, {titulo: '3. Pronto!', descricao: 'Aguarde a confirmação de seu número e Boa sorte!'}]
+            each box, index in boxes 
+              .item 
+                img(src="./images/pag-"+index+".svg" alt="")
+                h5.tit #{box.titulo}
+                p.desc #{box.descricao}
+              p.plus +
 
     //- Rifas paste 1
     .rifas
-      - var items = [{titulo: 'Colossus Estrela', valor: '20'}, {titulo: '2 Tequilas Mexicanas', valor: '5'}, {titulo: 'R$ 1.500,00 na sua conta', valor: '20'}];
+      - var items = [{titulo: 'Mussum Ipsum, cacilds vidis litro', valor: '20'}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: '5'}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: '20'}];
       .container
+        .titulo-p   
+          h4 SORTEIOS
+          small Escolha o sorteio e participe hoje!
         .estrutura
           each item, i in items
             .item
-              img.image(src="./images/api/api-rifas-"+i+".jpg" alt="Rifa "+i)
+              img.image(src="https://via.placeholder.com/650x380" alt="Rifa")
               h3.titulo #{item.titulo}
               a.button(href="rifa.html") Participar com R$ 
                 span #{item.valor}
 
-    //- Chamada criar Rifa
-    .create-rifa
-      .container
-        .chamada
-          .titulo
-            h2 Não perca mais tempo, crie Já seu site de Rifa! 
-            a(href="#").button Criar meu site de Rifa 
-          .mascote
-            img.image(src="./images/mascote.svg" alt="Macote Bota na Rifa")
+    //- //- Chamada criar Rifa
+    //- .create-rifa
+    //-   .container
+    //-     .chamada
+    //-       .titulo
+    //-         h2 Não perca mais tempo, crie Já seu site de Rifa! 
+    //-         a(href="#").button Criar meu site de Rifa 
+    //-       .mascote
+    //-         img.image(src="./images/mascote.svg" alt="Macote Bota na Rifa")
 
     //- Rifas paste 2
     .rifas
-      - var items = [{titulo: 'POP 110i 2021 ou R$ 7.000,00', valor: '10'}, {titulo: '01 barca de sushi para duas pessoas', valor: '20'}, {titulo: '35 cotas da rifa do Jetta TSI', valor: '5'}, {titulo: 'iPhone 12 lacrado ou 5 mil reais', valor: '120'}, {titulo: 'Moto Yamaha Xt660', valor: '100'}, {titulo: 'R$ 300,00 reais na conta', valor: '1'}];
+      - var items = [{titulo: 'Mussum Ipsum, cacilds vidis litro', valor: '10'}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: '20'}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: '5'}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: '120'}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: '100'}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: '1'}];
       .container
         .estrutura
-          - let iterator = 3;
           each item in items
             .item
-              img.image(src="./images/api/api-rifas-"+iterator+".jpg" alt="Rifa "+iterator)
+              img.image(src="https://via.placeholder.com/650x380" alt="Rifa ")
               h3.titulo #{item.titulo}
               a.button(href="rifa.html") Participar com R$ 
                 span #{item.valor}
-                - iterator++;
+
+    //- Rifas Encerradas
+    .rifas.encerradas
+      - var items = [{titulo: 'Mussum Ipsum, cacilds vidis litro', valor: ''}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: ''}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: ''}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: ''}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: ''}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: ''}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: ''}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: ''}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: ''}, {titulo: 'Mussum Ipsum, cacilds vidis litro', valor: ''}];
+      .container
+        .titulo-p   
+          h4 RIFAS ENCERRADAS
+          small Rifas sorteadas com Prêmios entregues
+        .estrutura
+          each item, i in items
+            .item
+              img.image(src="https://via.placeholder.com/650x380" alt="Rifa")
+              h3.titulo #{item.titulo}
+              a.button(href="rifa.html") Encerrado 
+                span #{item.valor}
 
     //- Footer
     footer.footer
       .container
         h2.titulo Perguntas Frequentes
-        - let lista = [{titulo: 'Como participo?', descricao: 'No campo acima, clique no botão verde participar, em seguida, serão exibidos todos os números disponíveis. Escolha o(s) número(s) de sua preferência, faça o pagamento para uma das opções disponibilizadas, envie o comprovante de pagamento para o whatsapp disponibilizado no campo "Enviar Comprovante", aguarde a confirmação de pagamento e pronto! Agora só aguardar até o dia do sorteio.'}, {titulo: 'Teste teste?', descricao: 'Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Si num tem leite então bota uma pinga aí cumpadi! Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.'}];
+        - let lista = [{titulo: 'Como participo?', descricao: 'Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Si num tem leite então bota uma pinga aí cumpadi! Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.'}, {titulo: 'Outra pergunta?', descricao: 'Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Si num tem leite então bota uma pinga aí cumpadi! Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.'}];
         ul.lista-perguntas
           each item in lista
             li
@@ -99,7 +129,7 @@ html(lang="pt-br")
     .direitos
       .container
         .logo
-          img(src="./images/logo.png" alt="Logo Bota na Rifa")
+          img(src="./images/nacional-rifas.png" alt="Logo Nascional Rifas")
         .copy
           p Desenvolvido por Bota na Rifa - 
             a(href="#") Termos e Condições 
@@ -107,23 +137,25 @@ html(lang="pt-br")
             span(data-year)
 
     //- modal vídeo
-    .assista
+    //- .assista
       h4 Assista ao vídeo
       svg(height="42" viewBox="0 -74 512.001 512" width="42" xmlns="http://www.w3.org/2000/svg")
         path(d="M271.277 144.113l-61.886-38.234v76.469l.004 76.468 61.882-38.234 61.891-38.234zm0 0" fill="#fff" fill-rule="evenodd")
         path(d="M209.39 105.879l61.887 38.234 61.891 38.235-61.89 38.234-61.883 38.234-.004-76.468zM13.817 269.254c5.243 50.121 25.368 70.117 66.094 76.469 76.73 11.96 275.45 11.96 352.184 0 40.722-6.352 60.847-26.344 66.09-76.47 5.128-48.995 5.128-124.815 0-173.812-5.243-50.12-25.368-70.117-66.09-76.468-76.735-11.961-275.453-11.961-352.184 0C39.184 25.324 19.06 45.32 13.816 95.44c-5.125 48.997-5.125 124.817 0 173.813zm0 0" fill="red" fill-rule="evenodd")
         path(d="M329.848 343.492c-23.493.797-48.336 1.2-73.848 1.2-73.746 0-138.996-3.31-174.55-8.852-37.99-5.922-53.083-23.621-57.688-67.63-5.035-48.148-5.035-123.581 0-171.73 4.605-44.007 19.699-61.703 57.687-67.625 6.168-.964 13.414-1.878 21.543-2.722 5.496-.57 9.488-5.485 8.918-10.98-.57-5.493-5.492-9.489-10.98-8.915-8.47.88-16.059 1.84-22.563 2.852-23.695 3.695-40.305 11.652-52.265 25.039C13.793 47.895 6.73 67.047 3.867 94.402c-5.156 49.317-5.156 126.575 0 175.891 2.863 27.355 9.926 46.504 22.235 60.273 11.96 13.387 28.57 21.344 52.265 25.036 36.512 5.695 102.918 9.093 177.633 9.093 25.734 0 50.809-.406 74.523-1.21 5.52-.188 9.844-4.813 9.657-10.333a9.991 9.991 0 00-10.332-9.66zm0 0M508.133 94.402c-2.863-27.351-9.926-46.504-22.23-60.273-11.965-13.387-28.575-21.344-52.27-25.035C397.117 3.398 330.71 0 256 0c-25.734 0-50.805.41-74.52 1.21-5.523.188-9.847 4.813-9.66 10.333.188 5.523 4.793 9.855 10.336 9.66 23.489-.797 48.336-1.2 73.848-1.2 73.738 0 138.992 3.31 174.55 8.852 37.985 5.926 53.083 23.622 57.684 67.63 5.04 48.148 5.04 123.581 0 171.73-4.601 44.008-19.699 61.703-57.683 67.629-6.168.96-13.418 1.875-21.547 2.719-5.492.57-9.485 5.484-8.914 10.98a10 10 0 0010.98 8.914c8.465-.879 16.055-1.836 22.559-2.852 23.695-3.695 40.305-11.648 52.27-25.035 12.304-13.77 19.367-32.922 22.23-60.273 5.156-49.317 5.156-126.578 0-175.895zm0 0")
         path(d="M338.422 173.84L214.648 97.367a10.005 10.005 0 00-10.128-.226 10.007 10.007 0 00-5.13 8.734v152.941c0 3.625 1.965 6.97 5.13 8.735a10.007 10.007 0 0010.129-.227l123.773-76.469a9.997 9.997 0 000-17.016zm-119.027 67.043v-117.07l94.742 58.535zm0 0M141.844 23.035c.222 0 .449-.008.676-.02 5.511-.367 9.68-5.132 9.312-10.644-.367-5.512-5.14-9.687-10.644-9.316h-.008c-5.512.367-9.676 5.132-9.309 10.644.352 5.285 4.75 9.336 9.973 9.336zm0 0M369.484 341.684c-5.511.363-9.683 5.129-9.316 10.64.352 5.285 4.75 9.336 9.969 9.336.226 0 .449-.008.675-.02h.008c5.512-.367 9.676-5.132 9.309-10.644-.367-5.512-5.125-9.676-10.645-9.312zm0 0")
-    .overlay#overlay
-    #modal.modal
+    //- .overlay#overlay
+    //- #modal.modal
       a.modal-close-btn &times;
       .modal-content
-        h3 Assista e faça parte você também!
-        iframe(width="100%" height="500px" src="https://www.youtube.com/embed/zNnmawU8j8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+        h3 Assista ao vídeo!
+        iframe(width="100%" height="500px" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 
     //- Busca do site
     include includes/busca.pug
 
     script(type="text/javascript").
-      document.querySelector('[data-year]').innerText = new Date().getFullYear()
+      document.querySelector('[data-year]').innerText = new Date().getFullYear();
+    script(src="./scripts/libs/jquery.js")
+    script(src="./scripts/libs/owl.carousel.js")
     script(src="./scripts/bundle.js")
